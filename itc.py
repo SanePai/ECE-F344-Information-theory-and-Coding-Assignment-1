@@ -14,7 +14,7 @@ print(hh1.n, hh1.k, hh1.G) #n,k and generator matrix of the hamming code
 msg_len = (2**hh1.k) - 1
 
 msg_array = [x for x in range(msg_len+1)]
-print(msg_array) #Creating a decimal message array
+print(f"Message array(Decimal Form): {msg_array}") #Creating a decimal message array
 
 def dToBi(n):
   '''Returns a fixed length binary bit array for a given message'''  
@@ -47,16 +47,16 @@ for i in range(msg_len+1):
     Table.append(tostring(code[i,:]^code[j,:]))
 # Table
 
-code1 = [] #container to hold he original codewords in a string form
+code1 = [] #container to hold the original codewords in a string form
 m,n = np.shape(code)
 for i in range(m):
   code1.append(tostring(code[i,:]))
-print(code1)
+print(f"Codewords: {code1}")
 
 Table_grid = np.array(Table) #Array to print a table
 Table_grid.resize((2**hh1.k,2**hh1.k)) # Resize the table to (2^k + 1)x(2^k + 1)
 
-np.shape(Table_grid)
+#np.shape(Table_grid)
 
 def gridprint(aray):
   '''Custom function to print the table with clear grid lines'''
